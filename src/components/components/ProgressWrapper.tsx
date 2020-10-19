@@ -1,12 +1,13 @@
 import React from 'react'
+import { ProgressWrapperProps } from './../interfaces'
 
-const ProgressWrapper = (props) => (
+const ProgressWrapper = (props: ProgressWrapperProps) => (
     <div style={{ ...styles.progress, ...getProgressWrapperStyle(props) }}>
         {props.children}
     </div>
 )
 
-const getProgressWrapperStyle = ({ width, pause, bufferAction }) => ({
+const getProgressWrapperStyle = ({ width= 0, pause=false, bufferAction=false }) => ({
     width: `${width * 100}%`,
     opacity: pause && !bufferAction ? 0 : 1
 })

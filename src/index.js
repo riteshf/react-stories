@@ -1,25 +1,6 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import './index.css';
+import App from './App';
 
-import { StoriesProvider } from "./store/stories/stories.store";
-import { GlobalProvider } from "./store/global/global.store";
-import Stories from "./components/stories";
-
-import "./styles.css";
-
-const globalProps = {
-  width: 360,
-  height: 640,
-  defaultInterval: 4000,
-  loop: true,
-  keyboardNavigation: true,
-};
-
-ReactDOM.render(
-  <GlobalProvider value={globalProps}>
-    <StoriesProvider>
-      <Stories />
-    </StoriesProvider>
-  </GlobalProvider>,
-  document.getElementById("root")
-);
+ReactDOM.render(<App />, document.getElementById('root'));
