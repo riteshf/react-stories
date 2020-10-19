@@ -1,7 +1,5 @@
 // vendor
-import React, { createContext, useReducer } from "react";
-import { actions } from "./action";
-import initialState from "./initialState";
+import React, { createContext, useContext } from "react";
 
 export const GlobalContext = createContext({
   width: 360,
@@ -9,12 +7,14 @@ export const GlobalContext = createContext({
   defaultInterval: 4000,
 });
 
-export const GlobalProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(actions, initialState);
+export const GlobalProvider = (props) => {
+  const { width, height, defaultInterval } = useContext(GlobalContext);
 
   return (
-    <GlobalContext.Provider value={{ state, dispatch }}>
-      {children}
+    <GlobalContext.Provider value={{  width,
+      height, defaultInterval }}>
+      {props.children}
     </GlobalContext.Provider>
   );
 };
+

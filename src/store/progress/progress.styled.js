@@ -1,11 +1,11 @@
 import styled from "styled-components";
 
-const getProgressStyle = ({ active }) => {
+const getProgressStyle = ({ active, count }) => {
   switch (active) {
     case 2:
       return { width: "100%" };
     case 1:
-      return { transform: `scaleX(${props.count / 100})` };
+      return { transform: `scaleX(${count / 100})` };
     case 0:
       return { width: 0 };
     default:
@@ -19,7 +19,7 @@ const getProgressWrapperStyle = ({ width, pause, bufferAction }) => ({
 });
 
 export const ProgressWrapperStyled = styled.div`
-  ${getProgressWrapperStyle(props)}
+  ${props => getProgressWrapperStyle(props)}
   height: 2;
   maxwidth: 100%;
   background: #555;
@@ -30,7 +30,7 @@ export const ProgressWrapperStyled = styled.div`
 ProgressWrapperStyled.displayName = "ProgressWrapperStyled";
 
 export const ProgressStyled = styled.div`
-  ${getProgressStyle(props.active)}
+${props => getProgressStyle(props)}
   background: #fff;
   height: 100%;
   maxwidth: 100%;

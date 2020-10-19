@@ -1,7 +1,5 @@
 // vendor
-import React, { createContext, useReducer } from "react";
-import { actions } from "./action";
-import initialState from "./initialState";
+import React, { createContext, useContext } from "react";
 
 export const StoriesContext = createContext({
   stories: [
@@ -17,12 +15,12 @@ export const StoriesContext = createContext({
   ],
 });
 
-export const StoriesProvider = ({ children }) => {
-  const [state, dispatch] = useReducer(actions, initialState);
+export const StoriesProvider = (props) => {
+  const { stories } = useContext(StoriesContext);
 
   return (
-    <StoriesContext.Provider value={{ state, dispatch }}>
-      {children}
+    <StoriesContext.Provider value={stories}>
+      {props.children}
     </StoriesContext.Provider>
   );
 };

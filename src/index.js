@@ -16,7 +16,7 @@ const globalProps = {
 ReactDOM.render(
   <GlobalProvider value={globalProps}>
     <StoriesProvider>
-      <Stories {...storiesProps} />
+      <Stories />
     </StoriesProvider>
   </GlobalProvider>,
   document.getElementById("root")
