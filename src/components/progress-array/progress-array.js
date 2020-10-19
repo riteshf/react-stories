@@ -56,7 +56,7 @@ export default () => {
 
     useEffect(() => {
         setCount(0)
-    }, [currentId, stories])
+    }, [currentId])
 
     useEffect(() => {
         if (!pause) {
@@ -65,7 +65,7 @@ export default () => {
         return () => {
             cancelAnimationFrame(animationFrameId.current)
         }
-    }, [currentId, incrementCount, pause])
+    }, [incrementCount, pause])
 
     
     return (

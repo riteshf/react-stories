@@ -11,6 +11,8 @@ const globalProps = {
   width: 360,
   height: 640,
   defaultInterval: 4000,
+  loop: true,
+  keyboardNavigation: true,
 };
 
 ReactDOM.render(

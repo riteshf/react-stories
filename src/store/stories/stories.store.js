@@ -12,6 +12,11 @@ export const StoriesContext = createContext({
         "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
       type: "video",
     },
+    {
+      url:
+        "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      type: "video",
+    },
   ],
 });
 

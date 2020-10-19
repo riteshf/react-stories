@@ -13,7 +13,7 @@ import { StoriesStyled, OverlayStyled } from "./stories.styled";
 
 const Stories = () => {
   const stories = useContext(StoriesContext);
-  const { width, height, loop, currentIndex, isPaused, keyboardNavigation } = useContext(GlobalContext);
+  const { width, height, loop, currentIndex = 0, isPaused, keyboardNavigation } = useContext(GlobalContext);
   
   const [currentId, setCurrentId] = useState(0);
   const [pause, setPause] = useState(true);
